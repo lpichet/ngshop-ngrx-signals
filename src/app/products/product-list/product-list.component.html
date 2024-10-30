@@ -1,0 +1,12 @@
+<div class="container mx-auto">
+    <div class="styles_cardGroup">
+        @for (product of store.filteredProducts(); track product.id) {
+            <ngshop-product-card 
+                [product]="product"
+                class="styles_card"
+            />
+    } @empty { 
+        <div class="styles_card">There are no items.</div> 
+    }
+    </div>
+</div>

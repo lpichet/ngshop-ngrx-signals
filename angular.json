@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngshop-ngrx": {
+    "ngshop-ngrx-signals": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ngshop-ngrx",
+            "outputPath": "dist/ngshop-ngrx-signals",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ngshop-ngrx:build:production"
+              "buildTarget": "ngshop-ngrx-signals:build:production"
             },
             "development": {
-              "buildTarget": "ngshop-ngrx:build:development"
+              "buildTarget": "ngshop-ngrx-signals:build:development"
             }
           },
           "defaultConfiguration": "development"

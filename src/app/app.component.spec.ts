@@ -14,10 +14,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'ngshop-ngrx' title`, () => {
+  it(`should have the 'ngshop-ngrx-signals' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngshop-ngrx');
+    expect(app.title).toEqual('ngshop-ngrx-signals');
   });
 
   it('should render title', () => {

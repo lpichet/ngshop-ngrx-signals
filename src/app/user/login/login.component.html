@@ -1,0 +1,49 @@
+<div class="container mx-auto">
+    <div class="styles_formGroupContainer">
+        <div class="styles_formGroup">
+            <div>
+                <h2 class="styles_title">Login</h2>
+            </div>
+            <form autocomplete="off" #loginForm="ngForm" (ngSubmit)="login()" class="styles_signInForm">
+                <div class="styles_inputGroup">
+                    <div class="styles_inputContainer"><label class="sr-only">Email</label>
+                        <input type="email" name="email" #email="ngModel" [(ngModel)]="credentials.email" class="styles_input"
+                            placeholder="Email Address" required email>
+                            @if(email.touched && email.errors?.['required']){
+                                <div class="styles_error">Email is required</div>
+                            }
+                            @if(email.touched && email.errors?.['email']){
+                                <div class="styles_error">Email is incorrect</div>
+                            }
+                        </div>
+                        
+                        
+                    <div class="styles_inputContainer"><label class="sr-only">Password</label>
+                        <input type="password" name="password" #password="ngModel" [(ngModel)]="credentials.password" 
+                            class="styles_input" placeholder="Password" required>
+                        @if(password.touched && password.invalid){
+                            <div class="styles_error">Password incorrect</div>
+                        }
+                    </div>
+                    <div class="styles_linkBox">
+                        <div class="styles_linkDiv"><span>Don't have an account? Sign up <a
+                                    class="text-blue-600 hover:underline" href="/signup"> here.</a></span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" [disabled]="loginForm.invalid" class="styles_button"><svg
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="2" stroke="currentColor" aria-hidden="true"
+                                class="my-auto h-5 w-6" aria1-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                </path>
+                            </svg>Login</button></div>
+                    @if(hasError){
+                        <div class="styles_error">Utilisateur ou mot de passe incorrect.</div>
+                    }
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
